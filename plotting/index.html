@@ -238,8 +238,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../aboutdocs/" title="Docs "Guide"" class="md-nav__link">
-      Docs "Guide"
+    <a href="../juliaprimer/" title="A Julia Primer" class="md-nav__link">
+      A Julia Primer
     </a>
   </li>
 
@@ -527,7 +527,7 @@
 <h2 id="plot-missing-data">plot missing data</h2>
 <p><div class="codehilite"><pre><span></span><span class="n">plot_missing</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">;</span> <span class="n">color</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
 </pre></div>
-Return an interactive plot of the number of missing loci in individuals of a <code>PopObj</code>, along with the number of missing individuals per locus. To set a custom color palette, use <code>color = [color1, color2, ...]</code></p>
+Return an interactive plot of the number of missing loci in individuals of a <code>PopObj</code>, along with the number of missing individuals per locus. To set a custom color palette for the boxplots, use <code>color = [color1, color2, ...]</code></p>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">plot_missing</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
@@ -539,7 +539,7 @@ Return an interactive plot of the number of missing loci in individuals of a <co
 <span class="n">PlotlyJS</span><span class="o">.</span><span class="n">savehtml</span><span class="p">(</span><span class="n">plot_missing</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="s">&quot;filename.html&quot;</span><span class="p">)</span>
 </pre></div>
 
-<p>This will save it in the current working directly as whatever you replace <code>filename.html</code> with. If you want the file to work properly offline, add a third option argument <code>:embed</code>, although be aware it inflates the file size (~3.5mb for the test data). </p>
+<p>This will save it in the current working directly as whatever you replace <code>filename.html</code> with. If you want the file to work properly offline, add a third argument <code>:embed</code>, although be aware it inflates the file size (~3.5mb for the test data). </p>
 <h2 id="plot-sample-locations">plot sample locations</h2>
 <div class="codehilite"><pre><span></span>plot_locations(x::PopObj; region = &quot;world&quot;, projection = &quot;orthographic&quot;)
 </pre></div>

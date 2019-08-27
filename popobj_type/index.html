@@ -238,8 +238,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../aboutdocs/" title="Docs "Guide"" class="md-nav__link">
-      Docs "Guide"
+    <a href="../juliaprimer/" title="A Julia Primer" class="md-nav__link">
+      A Julia Primer
     </a>
   </li>
 
@@ -604,7 +604,7 @@
                 
                   <h1>What's a PopObj</h1>
                 
-                <p>For the PopGen.jl package to be consistent, a standard flexible data structure needs to be defined. The solution is a custom type called a <code>PopObj</code> (pronounced "pop ob" with a silent j because it rolls of the tongue better). If you haven't already guessed, it's a combination of the words Population and Object. The struct is defined as:</p>
+                <p>For the PopGen.jl package to be consistent, a standard flexible data structure needs to be defined. The solution is a custom type called a <code>PopObj</code>. The struct is defined as:</p>
 <div class="codehilite"><pre><span></span><span class="k">mutable</span> <span class="k">struct</span> <span class="n">PopObj</span>
     <span class="n">ind</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
     <span class="n">popid</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="n">String</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span>
@@ -616,6 +616,12 @@
 <span class="k">end</span>
 </pre></div>
 
+<div class="admonition info">
+<p class="admonition-title">pronouncing "PopObj" </p>
+<p>If you haven't already guessed, <code>PopObj</code> is a combination of the words Population and Object. PopObj is pronounced "pop ob" with a silent j because it rolls of the tongue better, but writing it as PopOb looks weird. </p>
+<p>Yes, I have lost sleep over this detail.  <br />
+- Pavel</p>
+</div>
 <h3 id="ind">ind</h3>
 <p><strong>type</strong>: 1-dimension array of strings <code>::Array{String,1}</code></p>
 <p>The individual/sample names</p>

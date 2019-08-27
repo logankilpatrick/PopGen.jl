@@ -256,6 +256,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#goal" title="Goal" class="md-nav__link">
+    Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#why-julia-and-not-python-or-r" title="Why Julia and not Python or R?" class="md-nav__link">
     Why Julia and not Python or R?
   </a>
@@ -286,8 +293,8 @@
 
 
   <li class="md-nav__item">
-    <a href="aboutdocs/" title="Docs "Guide"" class="md-nav__link">
-      Docs "Guide"
+    <a href="juliaprimer/" title="A Julia Primer" class="md-nav__link">
+      A Julia Primer
     </a>
   </li>
 
@@ -498,6 +505,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#goal" title="Goal" class="md-nav__link">
+    Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#why-julia-and-not-python-or-r" title="Why Julia and not Python or R?" class="md-nav__link">
     Why Julia and not Python or R?
   </a>
@@ -533,9 +547,17 @@
                   <h1>Home</h1>
                 
                 <p><img alt="logo" src="img/logo.png" /></p>
-<p>This is the documentation for the PopGen.jl package. If you're reading this, you're likely interested in doing some kind of population genetics analyses. Please read through the docs and try the tutorial out to get a feel for what PopGen.jl can do. </p>
+<p>This is the documentation for the PopGen.jl package. If you're reading this, you're likely interested in doing some kind of population genetics analyses. Please read through the docs and try the functions out with the test data in <code>/test/testdata.gen</code> to get a feel for what PopGen.jl can do. </p>
 <h2 id="about">About</h2>
 <p>PopGen.jl is an attempt to shift population genetics analyses away from the patchwork of available pop-gen packages present in the R and Python languages, and combine it with the speed, power, fun(?), and community of the Julia language. We hope to implement common analyses (heterozygosity, kinship, FST, Tajima's D, etc.) in <em>sane</em>, user friendly ways, with syntax used within the package being consistent with the rest of the Julia ecosystem.</p>
+<h2 id="goal">Goal</h2>
+<p>To be a comprehensive package for population genetics analyses and visualization that's fast and user friendly. This project is developed with a particular mantra: <strong>Sanity, Sensibility, Accessibility</strong>.</p>
+<p><strong>Sanity</strong></p>
+<p>Functions are written in a way such that their use is sane and natural. When possible (or sensible), we use full words for input variables or other components of input/output. All functions in this package have their first argument as the input data without keywords. Always. We also try to minimize redundancy, such as the function <code>remove_loci!</code>, where the loci you wish you remove are listed as the second argument without a keyword, because the name of the function is already self explanatory, and the first argument will always be the input data, therefor having a keyword argument <code>loci =</code> would be redundant. </p>
+<p><strong>Sensibility</strong></p>
+<p>Functions need to be sensible, both in what they do and how they do it. This means that functions should include only the most relevant arguments, and the most sensible defaults for arguments. It also means the outputs need to be flexible enough to use with other Julia packages. As an example, <code>plot_missing</code> takes the entire <code>PopObj</code> as an argument rather than a user specifying specific elements, and it returns a pre-configured plot for basic data visualization. The only arguments are a custom color palette, if so desired. However, the purpose of that plot is for data exploration, so the specification of plotting attributes is unnecessary because those plots will never be in publications. If a user wants to make their own plots using that information, they can do that with the dataframes produced from <code>missing</code>, which is exactly what <code>plot_missing</code> does under the hood!</p>
+<p><strong>Accessibility</strong></p>
+<p>Documentation is everything! We recognize Julia is a comparatively young language, and we know which languages and packages other population geneticists are using for their work. We <em>want</em> you to be comfortable using <code>PopGen.jl</code>, and that means investing a lot of time into writing thorough documentation intended for users (vs developers). We also recognize that you (the reader) might not be very familiar with Julia, or any language other than R (which is ok!), so we've written a section on clarifying some Julia concepts/conventions that will make reading this documentation a whole lot clearer. It is by no means a replacement for sitting down and learning the Julia language a bit (<a href="https://benlauwens.github.io/ThinkJulia.jl/latest/book.html">here is a great online book on that</a>), but it should hopefully reduce the barrier of entry somewhat.</p>
 <h2 id="why-julia-and-not-python-or-r">Why Julia and not Python or R?</h2>
 <p><strong>Speed and syntax</strong></p>
 <p>The speed is comparable to C when coded correctly. Also, has Python-like syntax with <strong>optional</strong> tabs. We are also fans of 1-indexing, but that's more of a perk.</p>
@@ -571,13 +593,13 @@
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="aboutdocs/" title="Docs "Guide"" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="juliaprimer/" title="A Julia Primer" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Docs "Guide"
+                A Julia Primer
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

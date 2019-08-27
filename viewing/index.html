@@ -238,8 +238,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../aboutdocs/" title="Docs "Guide"" class="md-nav__link">
-      Docs "Guide"
+    <a href="../juliaprimer/" title="A Julia Primer" class="md-nav__link">
+      A Julia Primer
     </a>
   </li>
 
@@ -444,8 +444,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#find-missing" title="find missing" class="md-nav__link">
-    find missing
+  <a href="#missing-loci" title="missing loci" class="md-nav__link">
+    missing loci
   </a>
   
 </li>
@@ -553,8 +553,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#find-missing" title="find missing" class="md-nav__link">
-    find missing
+  <a href="#missing-loci" title="missing loci" class="md-nav__link">
+    missing loci
   </a>
   
 </li>
@@ -683,21 +683,22 @@ locus or array of loci to display.</p>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">genotypes</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">inds</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;cca_001&quot;</span><span class="p">,</span> <span class="s">&quot;cca_002&quot;</span><span class="p">,</span> <span class="s">&quot;cca_003&quot;</span><span class="p">])</span>
 </pre></div></div>
 </div>
-<h2 id="find-missing">find missing</h2>
+<h2 id="missing-loci">missing loci</h2>
 <div class="codehilite"><pre><span></span><span class="n">missing</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">)</span>
 </pre></div>
 
-<p>Identify and count missing loci in each individual of a <code>PopObj</code>. Returns a tuple of two 
-<code>DataFrames</code>: loci per individual, number per loci.</p>
+<p>Identify and count missing loci in each individual of a <code>PopObj</code>. Returns a tuple of two <code>DataFrames</code>: loci per individual, number per loci.</p>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span><span class="n">missing</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>since <code>missing</code> outputs a tuple of 2 DataFrames, so you can also assign two variables simultaneously to inherit the values of these dataframes, as with the second example.
+<p>since <code>missing</code> outputs a tuple of 2 DataFrames, so you can assign two variables simultaneously to inherit the values of these dataframes, like so:</p>
 <div class="codehilite"><pre><span></span><span class="n">miss_ind</span><span class="p">,</span> <span class="n">miss_loci</span> <span class="o">=</span> <span class="n">missing</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div></p>
+</pre></div>
+
+<p>If you're coming from R, this concept of multiple assignment probably sounds crazy, but it's pretty common in Python and Julia! Embrace the convenience!</p>
 </div>
                 
                   
