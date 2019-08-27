@@ -261,10 +261,58 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      The PopObj type
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        The PopObj type
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../popobj/" title="The PopObj" class="md-nav__link">
-      The PopObj
+    <a href="../popobj_type/" title="What's a PopObj" class="md-nav__link">
+      What's a PopObj
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../popobj_accessing/" title="Accessing" class="md-nav__link">
+      Accessing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../popobj_location/" title="Location data" class="md-nav__link">
+      Location data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -273,10 +321,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../importing/" title="Importing Data" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
       Importing Data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Importing Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../delimited/" title="CSV and delimited" class="md-nav__link">
+      CSV and delimited
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../genepop/" title="Genepop" class="md-nav__link">
+      Genepop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vcf/" title="VCF" class="md-nav__link">
+      VCF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -491,7 +587,14 @@
 <span class="n">a</span> <span class="o">=</span> <span class="n">genepop</span><span class="p">(</span><span class="s">&quot;/test/testdata.gen&quot;</span><span class="p">,</span> <span class="n">numpops</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)</span>
 </pre></div>
 
-<p>Keep in mind, your path to that file is probably different. <strong>If using windows</strong> make sure to change your backslashes "\" to forward slashes "/" </p>
+<div class="admonition info">
+<p class="admonition-title">keep in mind</p>
+<p>your path to that file is probably different, so make sure you set it correctly to where it is on your system.</p>
+</div>
+<div class="admonition reminder">
+<p class="admonition-title">Windows users</p>
+<p>make sure to change your backslashes "\" to forward slashes "/" </p>
+</div>
 <h2 id="individualsample-names">individual/sample names</h2>
 <div class="codehilite"><pre><span></span><span class="n">indnames</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">)</span>
 </pre></div>
@@ -506,7 +609,7 @@
 </pre></div>
 
 <p>View the genotypes of all individuals for specific loci in a <code>PopObj</code>.
-Default shows all genotypes for all individuals. Use <code>loci =</code> to specify a single
+Default shows all genotypes for all individuals. Add a second argument (no keywords!) to specify a single
 locus or array of loci to display.</p>
 <p>Examples:</p>
 <div class="superfences-tabs">
@@ -532,7 +635,10 @@ locus or array of loci to display.</p>
 <div class="codehilite"><pre><span></span><span class="n">locations</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-<p>Use <code>locations!</code> to add spatial data to a <code>PopObj</code></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>use <code>locations!</code> to add spatial data to a <code>PopObj</code></p>
+</div>
 <h2 id="population-ids">population ID's</h2>
 <div class="codehilite"><pre><span></span><span class="n">popid</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">;</span> <span class="n">listall</span><span class="o">::</span><span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
 </pre></div>
@@ -585,13 +691,13 @@ locus or array of loci to display.</p>
 <code>DataFrames</code>: loci per individual, number per loci.</p>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span><span class="n">missing</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
-<span class="n">miss_ind</span><span class="p">,</span> <span class="n">miss_loci</span> <span class="o">=</span> <span class="n">missing</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>since <code>missing</code> outputs a tuple of 2 DataFrames, so you can also assign two variables simultaneously to inherit the values of these dataframes, as with the second example.</p>
+<p>since <code>missing</code> outputs a tuple of 2 DataFrames, so you can also assign two variables simultaneously to inherit the values of these dataframes, as with the second example.
+<div class="codehilite"><pre><span></span><span class="n">miss_ind</span><span class="p">,</span> <span class="n">miss_loci</span> <span class="o">=</span> <span class="n">missing</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div></p>
 </div>
                 
                   
@@ -613,7 +719,7 @@ locus or array of loci to display.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../importing/" title="Importing Data" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../vcf/" title="VCF" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -622,7 +728,7 @@ locus or array of loci to display.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Importing Data
+                VCF
               </span>
             </div>
           </a>

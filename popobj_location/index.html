@@ -40,7 +40,7 @@
     
     
       
-        <title>The PopObj - PopGen.jl</title>
+        <title>Location data - PopGen.jl</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#the-popobj-type" tabindex="1" class="md-skip">
+      <a href="#location-data" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                The PopObj
+                Location data
               
             </span>
           
@@ -263,37 +263,71 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      The PopObj type
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        The PopObj type
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../popobj_type/" title="What's a PopObj" class="md-nav__link">
+      What's a PopObj
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../popobj_accessing/" title="Accessing" class="md-nav__link">
+      Accessing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        The PopObj
+        Location data
       </label>
     
-    <a href="./" title="The PopObj" class="md-nav__link md-nav__link--active">
-      The PopObj
+    <a href="./" title="Location data" class="md-nav__link md-nav__link--active">
+      Location data
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-a-popobj" title="What is a PopObj" class="md-nav__link">
-    What is a PopObj
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#location-data" title="Location Data" class="md-nav__link">
@@ -312,16 +346,69 @@
     
   </li>
 
+        
+      </ul>
+    </nav>
+  </li>
+
     
       
       
       
 
 
-  <li class="md-nav__item">
-    <a href="../importing/" title="Importing Data" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
       Importing Data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Importing Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../delimited/" title="CSV and delimited" class="md-nav__link">
+      CSV and delimited
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../genepop/" title="Genepop" class="md-nav__link">
+      Genepop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vcf/" title="VCF" class="md-nav__link">
+      VCF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -387,18 +474,9 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-a-popobj" title="What is a PopObj" class="md-nav__link">
-    What is a PopObj
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#location-data" title="Location Data" class="md-nav__link">
@@ -423,91 +501,17 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/pdimens/PopGen.jl/edit/master/docs/popobj.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/pdimens/PopGen.jl/edit/master/docs/popobj_location.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="the-popobj-type">the PopObj type</h1>
-<h2 id="what-is-a-popobj">What is a PopObj</h2>
-<p>For the PopGen.jl package to be consistent, a standard flexible data structure needs to be defined. The solution is a custom type called a <code>PopObj</code> (pronounced "pop ob" with a silent j because it rolls of the tongue better). If you haven't already guessed, it's a combination of the words Population and Object. The struct is defined as:</p>
-<div class="codehilite"><pre><span></span><span class="k">mutable</span> <span class="k">struct</span> <span class="n">PopObj</span>
-    <span class="n">ind</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
-    <span class="n">popid</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="n">String</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span>
-    <span class="n">loci</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
-    <span class="n">ploidy</span><span class="o">::</span><span class="kt">Int64</span>
-    <span class="n">genotypes</span><span class="o">::</span><span class="kt">Dict</span>
-    <span class="n">longitude</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="kt">Float64</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span>
-    <span class="n">latitude</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="kt">Float64</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span>
-<span class="k">end</span>
-</pre></div>
+                  <h1>Location data</h1>
+                
+                <h2 id="location-data">Location Data</h2>
+<p>Notice the <code>No location data provided</code> text on the second line of output when you show a <code>PopObj</code>, like demonstrated on the previous page. That text exists as a "heads up" rather than a warning because <strong>location data is optional</strong> for a <code>PopObj</code>. There are functions that use location information (e.g. <code>locations</code>and <code>plot_locations</code>), but most don't, so it's not a dealbreaker. If you add location information, displaying the <code>PopObj</code> again will show you output now including this information:</p>
+<div class="codehilite"><pre><span></span># assign random location data
+julia&gt; a.latitude = rand(1:50, 212) ; 
 
-<ul>
-<li><strong>ind</strong> : the individual/sample names</li>
-<li><strong>popid</strong> : the individual/sample population ID's (in the same order)</li>
-<li><strong>loci</strong> : the name of the loci</li>
-<li><strong>ploidy</strong> : the ploidy of the samples</li>
-<li>
-<p><strong>genotypes</strong> : the genotypes of the <strong>loci</strong></p>
-</li>
-<li>
-<p><strong>longitude</strong> : longitude data of samples (decimal degrees)</p>
-</li>
-<li><strong>latitude</strong> : latitude data of samples (decimal degrees)</li>
-</ul>
-<p>Accessing any of these fields is done with a dot <code>.</code> accessor and can use the <code>[]</code>slice accessor, as per standard Julia convention:</p>
-<div class="codehilite"><pre><span></span>julia&gt; a = genepop(&quot;/test/testdata.gen&quot;, numpops = 7) ;
-
-julia&gt; a.ind[1:6]
-6-element Array{String,1}:
- &quot;cca_001&quot;
- &quot;cca_002&quot;
- &quot;cca_003&quot;
- &quot;cca_005&quot;
- &quot;cca_007&quot;
- &quot;cca_008&quot;
-
- julia&gt; a.loci[1:6]
- 6-element Array{String,1}:
- &quot;Contig_35208&quot;
- &quot;Contig_23109&quot;
- &quot;Contig_4493&quot; 
- &quot;Contig_10742&quot;
- &quot;Contig_14898&quot;
- &quot;Contig_8483&quot; 
-
- julia&gt; a.ploidy
- 2
-</pre></div>
-
-<p>Given the volume of information that can be present in a <code>PopObj</code>, we defined a custom <code>Base.show(::PopObj)</code> to summarize the data rather than regurgitate everything on the screen. </p>
-<div class="codehilite"><pre><span></span>julia&gt; a
-Object of type PopObj:
-No location data provided
-
-Number of individuals: 212
-[&quot;cca_001&quot;, &quot;cca_002&quot;, &quot;cca_003&quot;] … [&quot;seg_029&quot;, &quot;seg_030&quot;, &quot;seg_031&quot;]
-
-Number of loci: 2213
-[&quot;Contig_35208&quot;, &quot;Contig_23109&quot;, &quot;Contig_4493&quot;] … [&quot;Contig_19384&quot;, &quot;Contig_22368&quot;, &quot;Contig_2784&quot;]
-
-Ploidy: 2
-Number of populations: 7
-
-   #Inds | Pop
-   --------------
-     21  |  1
-     30  |  2
-     28  |  3
-     65  |  4
-     28  |  5
-     20  |  6
-     20  |  7
-
-Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
-</pre></div>
-
-<h2 id="location-data">Location Data</h2>
-<p>Notice the <code>No location data provided</code> text on the second line of output above. That text exists as a "heads up" rather than a warning because <strong>location data is optional</strong> for a <code>PopObj</code>. There are functions that use location information (e.g. <code>locations</code>and <code>plot_locations</code>), but most don't, so it's not a dealbreaker. If you add location information, displaying the <code>PopObj</code> again will show you output now including this information:</p>
-<div class="codehilite"><pre><span></span>julia&gt; a.latitude = rand(1:50, 212) ; a.longitude = rand(1:50, 212) ; # assign random location data
+julia&gt; a.longitude = rand(1:50, 212) ;
 
 julia&gt; a
 Object of type PopObj:
@@ -540,6 +544,11 @@ Number of populations: 7
 
 Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
 </pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>While showing a <code>PopObj</code> represents location data as strings, they are actually coded as integers or floating point numbers. This was a design decision to remove visual clutter, however we can easily revert it back to displaying <code>Int</code> or <code>Float64</code> with type information if that's what users prefer.</p>
+</div>
                 
                   
                 
@@ -560,7 +569,7 @@ Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../install/" title="Installing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../popobj_accessing/" title="Accessing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -569,19 +578,19 @@ Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Installing
+                Accessing
               </span>
             </div>
           </a>
         
         
-          <a href="../importing/" title="Importing Data" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../delimited/" title="CSV and delimited" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Importing Data
+                CSV and delimited
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

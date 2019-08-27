@@ -393,10 +393,58 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      The PopObj type
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        The PopObj type
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../popobj/" title="The PopObj" class="md-nav__link">
-      The PopObj
+    <a href="../popobj_type/" title="What's a PopObj" class="md-nav__link">
+      What's a PopObj
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../popobj_accessing/" title="Accessing" class="md-nav__link">
+      Accessing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../popobj_location/" title="Location data" class="md-nav__link">
+      Location data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -405,10 +453,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../importing/" title="Importing Data" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
       Importing Data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Importing Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../delimited/" title="CSV and delimited" class="md-nav__link">
+      CSV and delimited
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../genepop/" title="Genepop" class="md-nav__link">
+      Genepop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vcf/" title="VCF" class="md-nav__link">
+      VCF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -616,7 +712,7 @@
 <span class="mi">12</span>
 </pre></div>
 
-<p>Julia will still process the command and assign <code>10 + 2 to</code>x`, but it won't show you the output in the terminal. We sometimes include a semicolon after commands in these docs to mimic what the REPL output would look like without spitting back out an array of over 200 values. <strong>These semicolons are optional</strong> </p>
+<p>Julia will still process the command and assign <code>10 + 2</code> to <code>x</code>, but it won't show you the output in the terminal. We sometimes include a semicolon after commands in these docs to mimic what the REPL output would look like without spitting back out an array of over 200 values. <strong>These semicolons are optional</strong> </p>
 <h3 id="in-between-assignment-commands">In between assignment commands</h3>
 <p>If you see a semicolon in between two variable assignments, like so:</p>
 <div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -694,12 +790,12 @@ julia&gt; add(&quot;water&quot;, &quot;melon&quot;)
 <h2 id="functions-with-and-without-keywords">Functions with and without keywords</h2>
 <div class="admonition info">
 <p class="admonition-title">TL;DR</p>
-<p>Reading these docs, pay attention to semicolons in the function argument lists.
--- arguments before a semicolon have no keyword and follow an explicit order</p>
+<p>Reading these docs, pay attention to semicolons in the function argument lists.</p>
 <ul>
+<li>arguments before a semicolon have no keyword and follow an explicit order</li>
 <li>arguments after a semicolon have a keyword <code>argument = value</code> and their order doesn't matter</li>
-<li><code>MethodError: no methods matching</code> is likely an issue on your side and not on our side :)<ul>
-<li>unless we accidentally forgot to export a function!</li>
+<li><code>MethodError: no methods matching</code> is more likely an issue on your side and not on our side <img alt="😄" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f604.svg" title=":smile:" /><ul>
+<li>unless we accidentally forgot to export a function! <img alt="🤦" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f926.svg" title=":facepalm:" /></li>
 </ul>
 </li>
 </ul>
