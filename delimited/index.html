@@ -238,8 +238,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../juliaprimer/" title="A Julia Primer" class="md-nav__link">
-      A Julia Primer
+    <a href="../juliaprimer/" title="Getting started" class="md-nav__link">
+      Getting started
     </a>
   </li>
 
@@ -293,7 +293,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../popobj_accessing/" title="Accessing" class="md-nav__link">
+    <a href="../PopObj_accessing/" title="Accessing" class="md-nav__link">
       Accessing
     </a>
   </li>
@@ -458,8 +458,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../viewing/" title="Viewing Data" class="md-nav__link">
-      Viewing Data
+    <a href="../commands/" title="View/edit PopObj" class="md-nav__link">
+      View/edit PopObj
     </a>
   </li>
 
@@ -470,20 +470,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../editing/" title="Editing PopObj" class="md-nav__link">
-      Editing PopObj
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../plotting/" title="Plotting" class="md-nav__link">
-      Plotting
+    <a href="../examples/" title="Example data" class="md-nav__link">
+      Example data
     </a>
   </li>
 
@@ -591,7 +579,7 @@
 <li>Loci names must be first row</li>
 <li>Individuals names must be first value in row</li>
 <li>Population ID's must be second value in row</li>
-<li><strong>Optional:</strong> longitude (x) values third value in row, latitude (y) fourth</li>
+<li><strong>Optional:</strong> longitude (x) values third value in row, latitude (y) fourth value in row</li>
 </ul>
 <h3 id="formatting-examples">Formatting examples</h3>
 <div class="superfences-tabs">
@@ -615,10 +603,14 @@ snbarb_03,2,-3.1,43.2,001002,001001,001001
 </pre></div></div>
 </div>
 <h2 id="importing-a-csv-into-julia-as-a-popobj">Importing a CSV into Julia as a <code>PopObj</code></h2>
+<div class="admonition warning">
+<p class="admonition-title">Windows users</p>
+<p>make sure to change your backslashes "\" to forward slashes "/" </p>
+</div>
 <div class="codehilite"><pre><span></span><span class="n">csv</span><span class="p">(</span><span class="n">infile</span><span class="p">;</span> <span class="n">delim</span><span class="p">,</span> <span class="n">ploidy</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">location</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
 
 <span class="c"># Example</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">csv</span><span class="p">(</span><span class="s">&quot;/data/cali_poppy.csv&quot;</span><span class="p">,</span> <span class="n">delim</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="n">ploidy</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">csv</span><span class="p">(</span><span class="s">&quot;/data/cali_poppy.csv&quot;</span><span class="p">,</span> <span class="n">delim</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="n">ploidy</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 <h3 id="arguments">Arguments</h3>
@@ -627,16 +619,20 @@ snbarb_03,2,-3.1,43.2,001002,001001,001001
 </ul>
 <h3 id="keyword-arguments">Keyword Arguments</h3>
 <ul>
-<li><code class="codehilite"><span class="n">delim</span><span class="o">::</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Char</span><span class="p">,</span><span class="n">String</span><span class="p">,</span><span class="kt">Regex</span><span class="p">}</span></code> : delimiter of the file, can be a string, character, or regex</li>
+<li><code class="codehilite"><span class="n">delim</span><span class="o">::</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Char</span><span class="p">,</span><span class="n">String</span><span class="p">,</span><span class="kt">Regex</span><span class="p">}</span></code> : delimiter of the file, can be a string, character, or regex<ul>
 <li>comma: <code>delim = ","</code></li>
 <li>space: <code>delim = " "</code></li>
 <li>tab: <code>delim = "\t"</code></li>
 <li>etc.</li>
-<li><code class="codehilite"><span class="n">ploidy</span><span class="o">::</span><span class="kt">Int64</span></code> : single integer of the ploidy of the samples in the file (default = 2)</li>
+</ul>
+</li>
+<li><code class="codehilite"><span class="n">ploidy</span><span class="o">::</span><span class="kt">Int64</span></code> : single integer of the ploidy of the samples in the file (default = 2)<ul>
 <li>haploid: <code>ploidy = 1</code></li>
 <li>diploid: <code>ploidy = 2</code></li>
 <li>triploid: <code>ploidy = 3</code></li>
 <li>etc.</li>
+</ul>
+</li>
 <li><code class="codehilite"><span class="n">location</span><span class="o">::</span><span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code> : true/false of whether location data is present in the file (default = false)</li>
 </ul>
                 

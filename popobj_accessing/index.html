@@ -40,7 +40,7 @@
     
     
       
-        <title>Accessing - PopGen.jl</title>
+        <title>Popobj accessing - PopGen.jl</title>
       
     
     
@@ -111,7 +111,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Accessing
+                Popobj accessing
               
             </span>
           
@@ -234,8 +234,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../juliaprimer/" title="A Julia Primer" class="md-nav__link">
-      A Julia Primer
+    <a href="../juliaprimer/" title="Getting started" class="md-nav__link">
+      Getting started
     </a>
   </li>
 
@@ -256,12 +256,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       The PopObj type
@@ -289,18 +287,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Accessing" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../PopObj_accessing/" title="Accessing" class="md-nav__link">
       Accessing
     </a>
-    
   </li>
 
         
@@ -387,8 +378,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../viewing/" title="Viewing Data" class="md-nav__link">
-      Viewing Data
+    <a href="../commands/" title="View/edit PopObj" class="md-nav__link">
+      View/edit PopObj
     </a>
   </li>
 
@@ -399,20 +390,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../editing/" title="Editing PopObj" class="md-nav__link">
-      Editing PopObj
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../plotting/" title="Plotting" class="md-nav__link">
-      Plotting
+    <a href="../examples/" title="Example data" class="md-nav__link">
+      Example data
     </a>
   </li>
 
@@ -444,10 +423,10 @@
                   <a href="https://github.com/pdimens/PopGen.jl/edit/master/docs/popobj_accessing.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Accessing</h1>
+                  <h1>Popobj accessing</h1>
                 
                 <p>Accessing any of these fields is done with a dot <code>.</code> accessor and can use the <code>[]</code>slice accessor, as per standard Julia convention:</p>
-<div class="codehilite"><pre><span></span>julia&gt; a = genepop(&quot;/test/testdata.gen&quot;, numpops = 7) ;
+<div class="codehilite"><pre><span></span>julia&gt; a = gulfsharks() ;
 
 julia&gt; a.ind[1:6]
 6-element Array{String,1}:
@@ -480,6 +459,12 @@ julia&gt; a.ind[1:6]
  &quot;6&quot;
  &quot;7&quot;
 </pre></div>
+
+<p>See the "Accessing a PopObj" tutorial for some practice.</p>
+<div class="admonition failure">
+<p class="admonition-title">manual editing</p>
+<p>Given the relationship of the ordered list of individuals, their population ID's, and the order of their genotypes in <code>.genotypes</code>, <strong>NEVER</strong> do any manual adding, removing, or sorting on <code>.ind</code>, <code>.popid</code>, or the arrays for any locus in <code>.genotypes</code>.</p>
+</div>
                 
                   
                 
@@ -496,41 +481,6 @@ julia&gt; a.ind[1:6]
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../popobj_type/" title="What's a PopObj" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                What's a PopObj
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../popobj_location/" title="Location data" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Location data
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

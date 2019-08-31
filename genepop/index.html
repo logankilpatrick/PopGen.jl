@@ -238,8 +238,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../juliaprimer/" title="A Julia Primer" class="md-nav__link">
-      A Julia Primer
+    <a href="../juliaprimer/" title="Getting started" class="md-nav__link">
+      Getting started
     </a>
   </li>
 
@@ -293,7 +293,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../popobj_accessing/" title="Accessing" class="md-nav__link">
+    <a href="../PopObj_accessing/" title="Accessing" class="md-nav__link">
       Accessing
     </a>
   </li>
@@ -458,8 +458,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../viewing/" title="Viewing Data" class="md-nav__link">
-      Viewing Data
+    <a href="../commands/" title="View/edit PopObj" class="md-nav__link">
+      View/edit PopObj
     </a>
   </li>
 
@@ -470,20 +470,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../editing/" title="Editing PopObj" class="md-nav__link">
-      Editing PopObj
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../plotting/" title="Plotting" class="md-nav__link">
-      Plotting
+    <a href="../examples/" title="Example data" class="md-nav__link">
+      Example data
     </a>
   </li>
 
@@ -629,10 +617,14 @@ Newcomb_04,  254230 564000 090120
 </pre></div></div>
 </div>
 <h2 id="import-a-genepop-file-into-julia-as-a-popobj">Import a genepop file into Julia as a <code>PopObj</code></h2>
-<div class="codehilite"><pre><span></span><span class="n">genepop</span><span class="p">(</span><span class="n">infile</span><span class="p">;</span> <span class="n">ploidy</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">popsep</span> <span class="o">=</span> <span class="s">&quot;POP&quot;</span><span class="p">,</span> <span class="n">numpop</span><span class="p">)</span>
+<div class="admonition warning">
+<p class="admonition-title">Windows users</p>
+<p>make sure to change your backslashes "\" to forward slashes "/" </p>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">genepop</span><span class="p">(</span><span class="n">infile</span><span class="p">;</span> <span class="n">ploidy</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">popsep</span> <span class="o">=</span> <span class="s">&quot;POP&quot;</span><span class="p">,</span> <span class="n">numpops</span><span class="p">)</span>
 
 <span class="c"># Example</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">genepop</span><span class="p">(</span><span class="s">&quot;/data/wasp_hive.gen&quot;</span><span class="p">,</span> <span class="n">ploidy</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">popsep</span> <span class="o">=</span> <span class="s">&quot;POP&quot;</span><span class="p">,</span> <span class="n">numpops</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">genepop</span><span class="p">(</span><span class="s">&quot;/data/wasp_hive.gen&quot;</span><span class="p">,</span> <span class="n">ploidy</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">popsep</span> <span class="o">=</span> <span class="s">&quot;POP&quot;</span><span class="p">,</span> <span class="n">numpops</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 <h3 id="arguments">Arguments</h3>
@@ -641,16 +633,18 @@ Newcomb_04,  254230 564000 090120
 </ul>
 <h3 id="keyword-arguments">Keyword Arguments</h3>
 <ul>
-<li><code class="codehilite">ploidy::Int64</code> : single integer of the ploidy of the samples in the file (default = 2)</li>
+<li><code class="codehilite">ploidy::Int64</code> : single integer of the ploidy of the samples in the file (default = 2)<ul>
 <li>haploid: <code>ploidy = 1</code></li>
 <li>diploid: <code>ploidy = 2</code></li>
 <li>triploid: <code>ploidy = 3</code></li>
 <li>etc.</li>
+</ul>
+</li>
 <li><code class="codehilite">popsep::String</code> : word that separates populations in <code>infile</code> (default: "POP")</li>
 <li><code class="codehilite">numpops::Int64</code> : number of populations present in <code>infile</code> (used for early error checking)</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition info">
+<p class="admonition-title">Default population names</p>
 <p>By default, the file reader will assign numbers as population ID's in order of appearance in the genepop file. Use the <code>popid!</code> function to rename these with your own population ID's.</p>
 </div>
                 

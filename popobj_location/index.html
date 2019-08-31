@@ -238,8 +238,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../juliaprimer/" title="A Julia Primer" class="md-nav__link">
-      A Julia Primer
+    <a href="../juliaprimer/" title="Getting started" class="md-nav__link">
+      Getting started
     </a>
   </li>
 
@@ -295,7 +295,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../popobj_accessing/" title="Accessing" class="md-nav__link">
+    <a href="../PopObj_accessing/" title="Accessing" class="md-nav__link">
       Accessing
     </a>
   </li>
@@ -418,8 +418,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../viewing/" title="Viewing Data" class="md-nav__link">
-      Viewing Data
+    <a href="../commands/" title="View/edit PopObj" class="md-nav__link">
+      View/edit PopObj
     </a>
   </li>
 
@@ -430,20 +430,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../editing/" title="Editing PopObj" class="md-nav__link">
-      Editing PopObj
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../plotting/" title="Plotting" class="md-nav__link">
-      Plotting
+    <a href="../examples/" title="Example data" class="md-nav__link">
+      Example data
     </a>
   </li>
 
@@ -508,12 +496,7 @@
                 
                 <h2 id="location-data">Location Data</h2>
 <p>Notice the <code>No location data provided</code> text on the second line of output when you show a <code>PopObj</code>, like demonstrated on the previous page. That text exists as a "heads up" rather than a warning because <strong>location data is optional</strong> for a <code>PopObj</code>. There are functions that use location information (e.g. <code>locations</code>and <code>plot_locations</code>), but most don't, so it's not a dealbreaker. If you add location information, displaying the <code>PopObj</code> again will show you output now including this information:</p>
-<div class="codehilite"><pre><span></span># assign random location data
-julia&gt; a.latitude = rand(1:50, 212) ; 
-
-julia&gt; a.longitude = rand(1:50, 212) ;
-
-julia&gt; a
+<div class="codehilite"><pre><span></span>julia&gt; a = gulfsharks()
 Object of type PopObj:
 
 Longitude:
@@ -569,7 +552,7 @@ Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../popobj_accessing/" title="Accessing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../PopObj_accessing/" title="Accessing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
