@@ -832,7 +832,7 @@
 <p>To follow along like a tutorial,  use the <code>gulfsharks</code> data. Load the data in if you haven't already:</p>
 <div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">PopGen</span>
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">sharks</span> <span class="o">=</span> <span class="n">gulfsharks</span><span class="p">()</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">sharks</span> <span class="o">=</span> <span class="n">gulfsharks</span><span class="p">()</span> <span class="p">;</span>
 </pre></div>
 
 <h2 id="individuals">individuals</h2>
@@ -874,12 +874,14 @@ View individual/sample names in a <code>PopObj</code>. This is equivalent to <co
 <div class="codehilite"><pre><span></span><span class="n">remove_inds!</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">,</span> <span class="n">inds</span><span class="o">::</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="mi">1</span><span class="p">}})</span>
 </pre></div>
 
-<p>Removes selected individuals from a <code>PopObj</code>. Input can be a single individual, or an array of individuals.</p>
+<p>Removes selected individuals from a <code>PopObj</code>. Input can be a single individual, or an array of individuals. Will output entire <code>PopObj</code>, so it's better to use a semicolon to suppress the output. Use <code>summary</code> or <code>.ind</code> if you want to confirm that the individuals were removed. This command will inform you if individuals were not found in the data.</p>
 <p>Examples:</p>
 <div class="superfences-tabs">
 <input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
 <label for="__tab_2_0">single individual</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">remove_inds!</span><span class="p">(</span><span class="n">sharks</span><span class="p">,</span> <span class="s">&quot;cc_001&quot;</span><span class="p">)</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">remove_inds!</span><span class="p">(</span><span class="n">sharks</span><span class="p">,</span> <span class="s">&quot;cc_001&quot;</span><span class="p">)</span> <span class="p">;</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">summary</span><span class="p">(</span><span class="n">sharks</span><span class="p">)</span>
 </pre></div></div>
 <input name="__tabs_2" type="radio" id="__tab_2_1" />
 <label for="__tab_2_1">single output</label>
@@ -915,7 +917,9 @@ Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
 </pre></div></div>
 <input name="__tabs_2" type="radio" id="__tab_2_2" />
 <label for="__tab_2_2">multiple individuals</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">remove_inds!</span><span class="p">(</span><span class="n">sharks</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;cc_001&quot;</span><span class="p">,</span><span class="s">&quot;cc_002&quot;</span><span class="p">,</span> <span class="s">&quot;cc_003&quot;</span><span class="p">])</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">remove_inds!</span><span class="p">(</span><span class="n">sharks</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;cc_001&quot;</span><span class="p">,</span><span class="s">&quot;cc_002&quot;</span><span class="p">,</span> <span class="s">&quot;cc_003&quot;</span><span class="p">])</span> <span class="p">;</span> 
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">summary</span><span class="p">(</span><span class="n">sharks</span><span class="p">)</span>
 </pre></div></div>
 <input name="__tabs_2" type="radio" id="__tab_2_3" />
 <label for="__tab_2_3">multiple output</label>
@@ -960,7 +964,7 @@ Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
 <h3 id="view-population-names">view population names</h3>
 <p><div class="codehilite"><pre><span></span><span class="n">popid</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">;</span> <span class="n">listall</span><span class="o">::</span><span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
 </pre></div>
-Just as you can view population ID's with <code>.popid</code>, you can also view them with the <code>popid()</code> command, which by default shows you a summary of the number of individuals in each population, just like you see when importing a file.  The <code>#Inds</code> means "number of individuals", and <code>Pop</code> refers to the population names.</p>
+Just as you can view population ID's with <code>.popid</code>, you can also view them with the <code>popid()</code> command, which by default shows you a summary of the number of individuals in each population, just like you see when using <code>summary</code>.  The <code>#Inds</code> means "number of individuals", and <code>Pop</code> refers to the population names.</p>
 <div class="superfences-tabs">
 <input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
 <label for="__tab_3_0">popid</label>
@@ -1175,6 +1179,8 @@ Rename the population ID's of a <code>PopObj</code> (the <code>.popid</code>). U
 <input name="__tabs_8" type="radio" id="__tab_8_0" checked="checked" />
 <label for="__tab_8_0">single locus</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">remove_loci!</span><span class="p">(</span><span class="n">sharks</span><span class="p">,</span> <span class="s">&quot;contig_35208&quot;</span><span class="p">)</span> <span class="p">;</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">summary</span><span class="p">(</span><span class="n">sharks</span><span class="p">)</span>
 </pre></div></div>
 <input name="__tabs_8" type="radio" id="__tab_8_1" />
 <label for="__tab_8_1">single output</label>
@@ -1210,7 +1216,9 @@ Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
 </pre></div></div>
 <input name="__tabs_8" type="radio" id="__tab_8_2" />
 <label for="__tab_8_2">multiple loci</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">remove_loci!</span><span class="p">(</span><span class="n">sharks</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;contig_35208&quot;</span><span class="p">,</span> <span class="s">&quot;contig_23109&quot;</span><span class="p">,</span> <span class="s">&quot;contig_4493&quot;</span><span class="p">])</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">remove_loci!</span><span class="p">(</span><span class="n">sharks</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;contig_35208&quot;</span><span class="p">,</span> <span class="s">&quot;contig_23109&quot;</span><span class="p">,</span> <span class="s">&quot;contig_4493&quot;</span><span class="p">])</span> <span class="p">;</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">summary</span><span class="p">(</span><span class="n">sharks</span><span class="p">)</span>
 </pre></div></div>
 <input name="__tabs_8" type="radio" id="__tab_8_3" />
 <label for="__tab_8_3">multiple output</label>
@@ -1421,14 +1429,43 @@ Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
 │ 2213 │ contig_2784  │ 7        │
 </pre></div></div>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Python has this feature, however, if you're migrating from R, multiple assignment probably looks weird, or like flat-out sorcery. Whenever a function returns a tuple of values, like <code>missing</code> does, you can assign as many variables to it at once. For example:
+<div class="codehilite"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+</pre></div>
+where </p>
+<p>a = 1</p>
+<p>b = 2</p>
+<p>c = 3</p>
+<p>d = [4, 5, 6, 7]</p>
+<p>embrace the convenience!</p>
+</div>
 <h3 id="plot-missing-data">plot missing data</h3>
 <p><div class="codehilite"><pre><span></span><span class="n">plot_missing</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">;</span> <span class="n">color</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
 </pre></div>
-Return an interactive plot of the number of missing loci in individuals of a <code>PopObj</code>, along with the number of missing individuals per locus. To set a custom color palette for the boxplots, use <code>color = [color1, color2, ...]</code></p>
+Return an interactive plot of the number of missing loci in individuals of a <code>PopObj</code>, along with the number of missing individuals per locus. Use <code>color = [color1, color2, ...]</code> to set a custom color palette for the boxplots. </p>
 <p>Example:</p>
 <p><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">plot_missing</span><span class="p">(</span><span class="n">sharks</span><span class="p">)</span>
 </pre></div>
 <img alt="missing_plot" src="../img/missing_plot.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">saving interactive plots</p>
+<p>To save the interactive plots, you can use the <code>savehtml</code> function from the <code>PlotlyJS.jl</code> package:
+<div class="codehilite"><pre><span></span><span class="n">PlotlyJS</span><span class="o">.</span><span class="n">savehtml</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="s">&quot;filename.html&quot;</span><span class="p">)</span>
+</pre></div>
+If you don't specify a full path in the filename, it will save it in your current working directory.
+<div class="codehilite"><pre><span></span><span class="c">#example</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">PlotlyJS</span> <span class="p">;</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">PlotlyJS</span><span class="o">.</span><span class="n">savehtml</span><span class="p">(</span><span class="n">plot_missing</span><span class="p">(</span><span class="n">sharks</span><span class="p">),</span> <span class="s">&quot;/home/pdimens/missingness.html&quot;</span><span class="p">)</span>
+</pre></div></p>
+<ul>
+<li>use a third argument <code>:embed</code> to make the plots fully viewable offline. The output files are much larger (relatively) because it embeds the Plotly javeascript into the file. For context, the<code>gulfsharks</code> plot file is ~3.5mb when using <code>:embed</code></li>
+</ul>
+</div>
+<p>​  <br />
+​    </p>
 <h2 id="location-data">location data</h2>
 <h3 id="view-location-data">view location data</h3>
 <p><div class="codehilite"><pre><span></span><span class="n">locations</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">)</span>
@@ -1474,7 +1511,7 @@ View location data (<code>.longitude</code> and <code>.latitude</code>) in a <co
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">sharks</span><span class="o">.</span><span class="n">latitdue</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">20</span><span class="o">:</span><span class="mi">30</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span> <span class="p">;</span> <span class="c"># creates 212 unique random numbers between 20 and 30</span>
 </pre></div>
 
-<p>However, if your data is in decimal minutes rather than decimal degrees, use the <code>locations!</code> function to add it to the fields. This function will do a conversion from decimal minutes to decimal degrees for you.</p>
+<p>However, if your data is in decimal minutes rather than decimal degrees, use the <code>locations!</code> function to add it to the fields. This function will do a conversion from decimal minutes to decimal degrees for you. To import those data into Julia, you'll likely want to use the wonderful <code>CSV.jl</code> package first.  </p>
 <h4 id="decimal-minutes-data">decimal minutes data</h4>
 <div class="codehilite"><pre><span></span><span class="n">locations!</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">;</span> <span class="n">xloc</span><span class="o">::</span><span class="kt">Array</span><span class="p">,</span> <span class="n">yloc</span><span class="o">::</span><span class="kt">Array</span><span class="p">)</span>
 </pre></div>
@@ -1484,7 +1521,7 @@ View location data (<code>.longitude</code> and <code>.latitude</code>) in a <co
 <li>Decimal Degrees : <code>-11.431</code></li>
 <li>Decimal Minutes : <code>"-11 43.11"</code> (must use space and double-quotes)</li>
 </ul>
-<p>If conversion is not necessary, can directly assign <code>PopObj.longitude</code> and <code>PopObj.latitude</code> as shown above. If you want to keep things consistent, you can still use <code>locations!</code> to assign both at once:</p>
+<p>If conversion is not necessary, can directly assign <code>PopObj.longitude</code> and <code>PopObj.latitude</code> as shown above. If you still wanted to use <code>locations!</code> but don't need a conversion, it still works:</p>
 <div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">long</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">50</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span> <span class="p">;</span> 
 
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">latitdue</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">20</span><span class="o">:</span><span class="mi">30</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span> <span class="p">;</span>
@@ -1493,7 +1530,7 @@ View location data (<code>.longitude</code> and <code>.latitude</code>) in a <co
 </pre></div>
 
 <h3 id="plot-location-data">plot location data</h3>
-<p>You're welcome to plot locations your own way, but for simplicity, we provide a simple <code>plot_locations</code> command to make a decent, albeit simple interactive plot (Plotly) and save some time. Have a look at the command in more detail under "Functions" for some configuration options.</p>
+<p>You're encouraged to plot locations however you think is best. For convenience and speed, we provide a <code>plot_locations</code> command to make a decent, albeit simple interactive plot (Plotly) and save some time. Have a look at the command in more detail under "Functions" for some configuration options.</p>
 <div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">plot_locations</span><span class="p">(</span><span class="n">sharks</span><span class="p">)</span>
 </pre></div>
 

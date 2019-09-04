@@ -391,6 +391,26 @@
     Slices
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" title="general" class="md-nav__link">
+    general
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#genotypes_1" title="genotypes" class="md-nav__link">
+    genotypes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -623,6 +643,26 @@
     Slices
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" title="general" class="md-nav__link">
+    general
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#genotypes_1" title="genotypes" class="md-nav__link">
+    genotypes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -666,12 +706,11 @@
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">load nancycats</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">ncats</span> <span class="o">=</span> <span class="n">nancycats</span><span class="p">()</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">ncats</span> <span class="o">=</span> <span class="n">nancycats</span><span class="p">()</span> <span class="p">;</span> <span class="n">summary</span><span class="p">(</span><span class="n">ncats</span><span class="p">)</span>
 </pre></div></div>
 <input name="__tabs_1" type="radio" id="__tab_1_1" />
 <label for="__tab_1_1">output</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span>Input File : /home/pdimens/.julia/packages/PopGen/h9b1q/data/data/nancycats.csv
-Object of type PopObj:
+<div class="superfences-content"><div class="codehilite"><pre><span></span>Object of type PopObj:
 No location data provided
 
 Number of individuals: 237
@@ -1006,7 +1045,8 @@ Dict{String,Array{Any,1}} with 9 entries:
 </div>
 </div>
 <h2 id="slices">Slices</h2>
-<p>You can likewise use slices to access parts of these data. If you're migrating from R or Python, it's the simple bracket accessor you're already familiar with to pull out a range of values. Julia just calls them slices. </p>
+<h3 id="general">general</h3>
+<p>You can likewise use slices to access parts of these data. If you're migrating from R or Python, it's the simple bracket accessor you're already familiar with, used to pull out a range of values. Julia just calls them slices. </p>
 <p>Let's look at a slice of <code>.ind</code>.</p>
 <div class="superfences-tabs">
 <input name="__tabs_11" type="radio" id="__tab_11_0" checked="checked" />
@@ -1024,7 +1064,7 @@ Dict{String,Array{Any,1}} with 9 entries:
  &quot;N220&quot;
 </pre></div></div>
 </div>
-<p>and we can do this for all the accessors, except <code>genotypes</code>, because it's a dictionary and has slightly different syntax, which we'll get to in a moment. Here's another example: </p>
+<p>Here's another example: </p>
 <div class="superfences-tabs">
 <input name="__tabs_12" type="radio" id="__tab_12_0" checked="checked" />
 <label for="__tab_12_0">slice .loci</label>
@@ -1046,16 +1086,31 @@ Dict{String,Array{Any,1}} with 9 entries:
 <p class="admonition-title">:end</p>
 <p>All things start at 1, so there is no need for a special word for it. On the other hand, objects can have unknown lengths or varied lengths as you work with them. In Julia, use the word <code>end</code> in a slice range to indicate you want it to go to the end,, regardless of length or known size. </p>
 </div>
+<h3 id="genotypes_1">genotypes</h3>
+<p>We can do this for all the accessors, except <code>genotypes</code>, because it's a dictionary and has slightly different syntax. To use slices on <code>genotypes</code>, you will need to call the locus by name using the <code>Dict</code> syntax, then take a slice of that:</p>
+<div class="superfences-tabs">
+<input name="__tabs_13" type="radio" id="__tab_13_0" checked="checked" />
+<label for="__tab_13_0">slice genotypes</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">ncats</span><span class="o">.</span><span class="n">genotypes</span><span class="p">[</span><span class="s">&quot;fca8&quot;</span><span class="p">][</span><span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div></div>
+<input name="__tabs_13" type="radio" id="__tab_13_1" />
+<label for="__tab_13_1">output</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>3-element Array{Any,1}:
+ (0, 0)    
+ (0, 0)    
+ (135, 143)
+</pre></div></div>
+</div>
 <h2 id="operating-on-accessors">Operating on accessors</h2>
 <p>These accessors follow the exact same format as the dot operator in Python, or the <code>$</code> operator in R, meaning these objects can be assigned to new variables, you can operate on them, iterate over them, etc. </p>
 <p>Here's a simple example to display the unique population ID's in your PopObj</p>
 <div class="superfences-tabs">
-<input name="__tabs_13" type="radio" id="__tab_13_0" checked="checked" />
-<label for="__tab_13_0">unique</label>
+<input name="__tabs_14" type="radio" id="__tab_14_0" checked="checked" />
+<label for="__tab_14_0">unique</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">unique</span><span class="p">(</span><span class="n">ncats</span><span class="o">.</span><span class="n">popid</span><span class="p">)</span>
 </pre></div></div>
-<input name="__tabs_13" type="radio" id="__tab_13_1" />
-<label for="__tab_13_1">output</label>
+<input name="__tabs_14" type="radio" id="__tab_14_1" />
+<label for="__tab_14_1">output</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span>17-element Array{Union{Int64, String},1}:
  &quot;1&quot; 
  &quot;2&quot; 

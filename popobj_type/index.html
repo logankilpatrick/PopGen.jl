@@ -658,8 +658,10 @@
 </pre></div>
 
 <h2 id="viewing-a-popobj">Viewing a PopObj</h2>
-<p>Given the volume of information that can be present in a <code>PopObj</code>, we defined a custom <code>Base.show(::PopObj)</code> to summarize the data rather than regurgitate everything on the screen. </p>
-<div class="codehilite"><pre><span></span>julia&gt; a = gulfsharks()
+<p>Given the volume of information that can be present in a <code>PopObj</code>, we recommend <code>summary()</code> to summarize the data rather than regurgitate everything on the screen. </p>
+<div class="codehilite"><pre><span></span>julia&gt; a = gulfsharks() ;
+
+julia&gt; summary(a)
 Object of type PopObj:
 No location data provided
 
@@ -685,8 +687,9 @@ Number of populations: 7
 Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
 </pre></div>
 
-<p>For context, this is what <code>gulfsharks</code> looks like without a custom <code>show</code> function 🤮 :</p>
+<p>For context, this is what <code>gulfsharks</code> looks like without a semicolon at the end 🤮 :</p>
 <p><img alt="popobj_raw" src="../img/popobj_raw.png" /></p>
+<p>We chose not to define a custom <code>Base.show</code> method to facilitate Atom/Juno visibility and drop-downs. </p>
                 
                   
                 
