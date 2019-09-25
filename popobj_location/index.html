@@ -515,17 +515,20 @@ Number of loci: 2213
 Ploidy: 2
 Number of populations: 7
 
-   #Inds | Pop
-   --------------
-     21  |  1
-     30  |  2
-     28  |  3
-     65  |  4
-     28  |  5
-     20  |  6
-     20  |  7
+Population names and counts:
+7×2 DataFrames.DataFrame
+│ Row │ population       │ count │
+│     │ Categorical…⍰    │ Int32 │
+├─────┼──────────────────┼───────┤
+│ 1   │ &quot;Cape Canaveral&quot; │ 21    │
+│ 2   │ &quot;Georgia&quot;        │ 30    │
+│ 3   │ &quot;South Carolina&quot; │ 28    │
+│ 4   │ &quot;Florida Keys&quot;   │ 65    │
+│ 5   │ &quot;Mideast Gulf&quot;   │ 28    │
+│ 6   │ &quot;Northeast Gulf&quot; │ 20    │
+│ 7   │ &quot;Southeast Gulf&quot; │ 20    │
 
-Available fields: ind, popid, loci, ploidy, genotypes, longitude, latitude
+Available .samples fields: .name, .population, .ploidy, .longitude, .latitude
 </pre></div>
 
 <div class="admonition info">

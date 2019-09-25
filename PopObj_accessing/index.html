@@ -768,25 +768,28 @@ Ploidy:
 Int8[2, 2, 2] … Int8[2, 2, 2]
 Number of populations: 17
 
-#samp_id | Pop
---------------
-10 | 1
-22 | 2
-12 | 3
-23 | 4
-15 | 5
-11 | 6
-14 | 7
-10 | 8
-9 | 9
-11 | 10
-20 | 11
-14 | 12
-13 | 13
-17 | 14
-11 | 15
-12 | 16
-13 | 17
+Population names and counts:
+17×2 DataFrames.DataFrame
+│ Row │ population    │ count │
+│     │ Categorical…⍰ │ Int32 │
+├─────┼───────────────┼───────┤
+│ 1   │ &quot;1&quot;           │ 10    │
+│ 2   │ &quot;2&quot;           │ 22    │
+│ 3   │ &quot;3&quot;           │ 12    │
+│ 4   │ &quot;4&quot;           │ 23    │
+│ 5   │ &quot;5&quot;           │ 15    │
+│ 6   │ &quot;6&quot;           │ 11    │
+│ 7   │ &quot;7&quot;           │ 14    │
+│ 8   │ &quot;8&quot;           │ 10    │
+│ 9   │ &quot;9&quot;           │ 9     │
+│ 10  │ &quot;10&quot;          │ 11    │
+│ 11  │ &quot;11&quot;          │ 20    │
+│ 12  │ &quot;12&quot;          │ 14    │
+│ 13  │ &quot;13&quot;          │ 13    │
+│ 14  │ &quot;14&quot;          │ 17    │
+│ 15  │ &quot;15&quot;          │ 11    │
+│ 16  │ &quot;16&quot;          │ 12    │
+│ 17  │ &quot;17&quot;          │ 13    │
 
 Available .samples fields: .name, .population, .ploidy, .longitude, .latitude
 </pre></div></div>
@@ -1268,8 +1271,8 @@ Available .samples fields: .name, .population, .ploidy, .longitude, .latitude
 <input name="__tabs_12" type="radio" id="__tab_12_1" />
 <label for="__tab_12_1">output</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span>237-element Array{Any,1}:
- (0, 0)    
- (0, 0)    
+ missing    
+ missing    
  (135, 143)
  (135, 133)
  (135, 133)
@@ -1410,8 +1413,8 @@ Available .samples fields: .name, .population, .ploidy, .longitude, .latitude
 <input name="__tabs_15" type="radio" id="__tab_15_1" />
 <label for="__tab_15_1">output</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span>3-element Array{Any,1}:
- (0, 0)    
- (0, 0)    
+ missing    
+ missing    
  (135, 143)
 </pre></div></div>
 </div>

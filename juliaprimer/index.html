@@ -703,38 +703,38 @@
 <p>Julia will still process the command and assign <code>10 + 2</code> to <code>x</code>, but it won't show you the output in the terminal. We sometimes include a semicolon after commands in these docs to mimic what the REPL output would look like without spitting back out an array of over 200 values. <strong>These semicolons are optional</strong> </p>
 <h3 id="in-between-assignment-commands">In between assignment commands</h3>
 <p>If you see a semicolon in between two variable assignments, like so:</p>
-<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 
 <p>that's a Julia short-hand for making two short lines of code appear on a single line. It's the equivalent of doing:</p>
-<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">;</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 
 <p>We sometimes choose this writing format for very quick  and small assignments hoping to save some visual space. Use whichever method is most comfortable and sensible for you!</p>
 <h2 id="help-mode">Help mode</h2>
 <p>To enter <code>help</code> mode in the REPL, simply press the question mark key <code>?</code> (shift + key) and you will notice a different prompt <code>help?&gt;</code> for you to type in a function.</p>
-<div class="codehilite"><pre><span></span><span class="n">help</span><span class="o">?&gt;</span><span class="n">popid</span>
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="o">?&gt;</span><span class="n">population</span>
 </pre></div>
 
-<div class="codehilite"><pre><span></span>search: popid popid! popfirst! popdisplay precompile __precompile__ CompositeException
+<div class="codehilite"><pre><span></span>search: population populations population! populations!
 
-  popid(x::PopObj; listall::Bool = false)
+  population(x::PopObj; listall::Bool = false)
 
   View unique population ID&#39;s in a PopObj.
 
-  listall = true, displays ind and their popid instead (default = false).
+  listall = true, displays ind and their population instead (default = false).
 </pre></div>
 
 <h2 id="type-information">Type information</h2>
 <p>Julia encourages strong typing of variables, and the functions in <code>PopGen</code> are no exception to this. However, to reduce the barrier of entry required to understand this documentation and the subsequent package, we have chosen to omit some of the <code>type</code> information from functions to reduce visual clutter for newer users. As experienced users already know, if you would like to see the explicit type information, you can look at the code on github, invoke the <code>help</code> system in the REPL (above), or search for a function in the Documentation pane in Juno. </p>
-<p>You'll notice types follow a specific format, which is <code>object::type</code>. This format is a type assignment, so in the function <code>popid</code>, which looks like: <code>popid(x::PopObj; listall::Bool = false)</code>:</p>
+<p>You'll notice types follow a specific format, which is <code>object::type</code>. This format is a type assignment, so in the function <code>population</code>, which looks like: <code>population(x::PopObj; listall::Bool = false)</code>:</p>
 <ul>
 <li><code>x</code> is a variable of type <code>PopObj</code> </li>
 <li><code>listall</code> is a variable of type <code>Bool</code> (boolean) meaning it only takes <code>true</code> or <code>false</code> without quotes</li>
 </ul>
 <h3 id="type-unions">Type Unions</h3>
-<p>You might see the type <code>Union</code> appear occasionally throughout this documentation, and you can consider it a list of types. For example, if something was of type <code>::Union{String,Integer}</code>, that means that <strong>either</strong> a <code>String</code> or <code>Integer</code> works. These kinds of <code>Union</code> appear in a few places, like <code>remove_inds!</code> , where the input can be either a <code>String</code> (a single individual) or an <code>Array{String,1}</code> (one-dimensional list of names). For <code>remove_inds!</code>, the second argument type appears as <code>::Union{String, Array{String,1}}</code>. Also, the order in which types appear in <code>Union</code> types don't matter.</p>
+<p>You might see the type <code>Union</code> appear occasionally throughout this documentation, and you can consider it a list of types. For example, if something was of type <code>::Union{String,Integer}</code>, that means that <strong>either</strong> a <code>String</code> or <code>Integer</code> works. These kinds of <code>Union</code> appear in a few places, like <code>remove_samples!</code> , where the input can be either a <code>String</code> (a single individual) or an <code>Array{String,1}</code> (one-dimensional list of names). For <code>remove_inds!</code>, the second argument type appears as <code>::Union{String, Array{String,1}}</code>. Also, the order in which types appear in <code>Union</code> types don't matter.</p>
 <h2 id="functions-vs-methods">Functions vs. Methods</h2>
 <p>As part of Julia's type-safe paradigm and multiple dispatch (see "ERROR: MethodError: no method matching" below), type specifications in functions often reduce runtime of functions, but also establish function identity. Multiple dispatch refers to several different functions having the same name, but employing different <em>methods</em> depending on the input. In Julia, it's easier to write a single function with multiple type-safe methods, rather than one mega-function that accepts any type and have a bunch of <code>if</code> statements that determines what the program does depending on the input. </p>
 <p>In practice, this looks like:</p>
