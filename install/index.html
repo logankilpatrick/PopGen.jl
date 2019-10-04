@@ -293,6 +293,26 @@
     Installing PopGen.jl
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-repl-or-juno" title="In REPL or Juno" class="md-nav__link">
+    In REPL or Juno
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-jupyter-notebooks-or-nteract" title="With Jupyter Notebooks or nteract" class="md-nav__link">
+    With Jupyter Notebooks or nteract
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -566,6 +586,26 @@
     Installing PopGen.jl
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-repl-or-juno" title="In REPL or Juno" class="md-nav__link">
+    In REPL or Juno
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-jupyter-notebooks-or-nteract" title="With Jupyter Notebooks or nteract" class="md-nav__link">
+    With Jupyter Notebooks or nteract
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -597,31 +637,22 @@
                 <h1 id="installation">Installation</h1>
 <h2 id="installing-popgenjl">Installing PopGen.jl</h2>
 <p>The package is currently unregistered while it's under active early development. However, installation is still simple!</p>
+<h3 id="in-repl-or-juno">In REPL or Juno</h3>
 <p>Invoke the package manager with <code>]</code> in the REPL and use</p>
 <div class="codehilite"><pre><span></span><span class="n">add</span> <span class="s">&quot;https://github.com/pdimens/PopGen.jl&quot;</span>
 </pre></div>
 
-<p>If using Jupyter Notebooks or nteract, install the package in julia with</p>
+<h3 id="with-jupyter-notebooks-or-nteract">With Jupyter Notebooks or nteract</h3>
 <div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">Pkg</span>
 <span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;https://github.com/pdimens/PopGen.jl&quot;</span><span class="p">)</span> 
 </pre></div>
 
 <h2 id="using-popgen">Using PopGen</h2>
-<p>Like all Julia packages, to activate <code>PopGen</code>, simply run:</p>
+<p>Like all Julia packages, to activate PopGen.jl, simply run:</p>
 <div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">PopGen</span>
 </pre></div>
 
-<p>Feel free to play around with the test data in <code>/test/testdata.gen</code> or add it to your workspace with the <code>nancycats</code> and <code>gulfsharks</code> commands.</p>
-<div class="admonition note">
-<p class="admonition-title">Performance notes</p>
-<p>If you're migrating to Julia from Python or R (or Matlab, etc.), you'll think Julia is slow and laggy because loading packages and running stuff has a noticeable wait time (10-40sec). However, if this is your first time in Julia, then it's worth mentioning that this lag is "compilation overhead". What this means is, Julia tries to pre-compile as much code as possible (into optimized machine code) when running something or loading a package. This lag exists <strong>only the first time</strong> you run something. Every subsequent run of a function, even with different parameters, will be <strong>substantially</strong> faster, and in most cases instant. If you want to test this yourself, try to run a line of code twice with <code>@time</code> before the function and compare the results. Here's an example:
-<div class="codehilite"><pre><span></span>julia&gt; @time using PopGen
-17.415902 seconds (19.88 M allocations: 1.022 GiB, 2.79% gc time)
-
-julia&gt; @time using PopGen
-0.100233 seconds (64.07 k allocations: 3.123 MiB, 6.02% gc time)
-</pre></div></p>
-</div>
+<p>Feel free to play around with the test data in <code>/data/data/</code> or add it to your workspace with the <code>nancycats</code> and <code>gulfsharks</code> commands.</p>
                 
                   
                 

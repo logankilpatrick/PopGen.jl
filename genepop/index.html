@@ -398,8 +398,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#formatting-examples" title="Formatting Examples" class="md-nav__link">
-    Formatting Examples
+  <a href="#formatting-examples" title="formatting examples" class="md-nav__link">
+    formatting examples
   </a>
   
 </li>
@@ -418,15 +418,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#arguments" title="Arguments" class="md-nav__link">
-    Arguments
+  <a href="#arguments" title="arguments" class="md-nav__link">
+    arguments
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#keyword-arguments" title="Keyword Arguments" class="md-nav__link">
-    Keyword Arguments
+  <a href="#keyword-arguments" title="keyword Arguments" class="md-nav__link">
+    keyword Arguments
   </a>
   
 </li>
@@ -599,8 +599,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#formatting-examples" title="Formatting Examples" class="md-nav__link">
-    Formatting Examples
+  <a href="#formatting-examples" title="formatting examples" class="md-nav__link">
+    formatting examples
   </a>
   
 </li>
@@ -619,15 +619,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#arguments" title="Arguments" class="md-nav__link">
-    Arguments
+  <a href="#arguments" title="arguments" class="md-nav__link">
+    arguments
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#keyword-arguments" title="Keyword Arguments" class="md-nav__link">
-    Keyword Arguments
+  <a href="#keyword-arguments" title="keyword Arguments" class="md-nav__link">
+    keyword Arguments
   </a>
   
 </li>
@@ -667,7 +667,7 @@
 <li><strong>Must</strong> be the same word each time and not a unique population name</li>
 <li>File is tab or space delimited</li>
 </ul>
-<h3 id="formatting-examples">Formatting Examples</h3>
+<h3 id="formatting-examples">formatting examples</h3>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">loci stacked vertically</label>
@@ -705,21 +705,22 @@ Newcomb_04,  254230 564000 090120
 <p class="admonition-title">Windows users</p>
 <p>make sure to change your backslashes "\" to forward slashes "/" </p>
 </div>
-<div class="codehilite"><pre><span></span><span class="n">genepop</span><span class="p">(</span><span class="n">infile</span><span class="p">;</span> <span class="n">digits</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">popsep</span> <span class="o">=</span> <span class="s">&quot;POP&quot;</span><span class="p">,</span> <span class="n">numpops</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">genepop</span><span class="p">(</span><span class="n">infile</span><span class="p">;</span> <span class="n">digits</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">popsep</span> <span class="o">=</span> <span class="s">&quot;POP&quot;</span><span class="p">,</span> <span class="n">numpops</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s">&quot;snp&quot;</span><span class="p">)</span>
 
 <span class="c"># Example</span>
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">genepop</span><span class="p">(</span><span class="s">&quot;/data/wasp_hive.gen&quot;</span><span class="p">,</span> <span class="n">digits</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">popsep</span> <span class="o">=</span> <span class="s">&quot;POP&quot;</span><span class="p">,</span> <span class="n">numpops</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
-<h3 id="arguments">Arguments</h3>
+<h3 id="arguments">arguments</h3>
 <ul>
 <li><code class="codehilite">infile::String</code> : path to genepop file, in quotes</li>
 </ul>
-<h3 id="keyword-arguments">Keyword Arguments</h3>
+<h3 id="keyword-arguments">keyword Arguments</h3>
 <ul>
 <li><code class="codehilite">digits::Int64</code> : the number of digits used to denote an allele (default = 3)</li>
 <li><code class="codehilite">popsep::String</code> : word that separates populations in <code>infile</code> (default: "POP")</li>
 <li><code class="codehilite">numpops::Int64</code> : number of populations present in <code>infile</code> (used for early error checking)</li>
+<li><code class="codehilite">marker::String</code> : "snp" (default) or "msat" for microsatellites</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Default population names</p>
