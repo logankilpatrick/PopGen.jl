@@ -40,7 +40,7 @@
     
     
       
-        <title>VCF - PopGen.jl</title>
+        <title>Hardy-Weinberg Equilibrium - PopGen.jl</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#format" tabindex="1" class="md-skip">
+      <a href="#test-for-hardy-weinberg-equilibrium" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                VCF
+                Hardy-Weinberg Equilibrium
               
             </span>
           
@@ -332,12 +332,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       Importing Data
@@ -377,59 +375,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        VCF
-      </label>
-    
-    <a href="./" title="VCF" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../vcf/" title="VCF" class="md-nav__link">
       VCF
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#format" title="Format" class="md-nav__link">
-    Format
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-a-vcf-file-as-a-popobj" title="Import a VCF file as a PopObj" class="md-nav__link">
-    Import a VCF file as a PopObj
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-vcf-files-lack" title="What VCF files lack" class="md-nav__link">
-    What VCF files lack
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -466,10 +416,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
       Population Genetics Tests
@@ -485,11 +437,72 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../hardyweinberg/" title="Hardy-Weinberg Equilibrium" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Hardy-Weinberg Equilibrium
+      </label>
+    
+    <a href="./" title="Hardy-Weinberg Equilibrium" class="md-nav__link md-nav__link--active">
       Hardy-Weinberg Equilibrium
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#test-for-hardy-weinberg-equilibrium" title="Test for Hardy-Weinberg equilibrium" class="md-nav__link">
+    Test for Hardy-Weinberg equilibrium
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" title="arguments" class="md-nav__link">
+    arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correction-methods" title="correction methods:" class="md-nav__link">
+    correction methods:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" title="example" class="md-nav__link">
+    example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -565,23 +578,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#format" title="Format" class="md-nav__link">
-    Format
+  <a href="#test-for-hardy-weinberg-equilibrium" title="Test for Hardy-Weinberg equilibrium" class="md-nav__link">
+    Test for Hardy-Weinberg equilibrium
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" title="arguments" class="md-nav__link">
+    arguments
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#import-a-vcf-file-as-a-popobj" title="Import a VCF file as a PopObj" class="md-nav__link">
-    Import a VCF file as a PopObj
+        
+          <li class="md-nav__item">
+  <a href="#correction-methods" title="correction methods:" class="md-nav__link">
+    correction methods:
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#what-vcf-files-lack" title="What VCF files lack" class="md-nav__link">
-    What VCF files lack
+        
+          <li class="md-nav__item">
+  <a href="#example" title="example" class="md-nav__link">
+    example
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -601,36 +627,88 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/pdimens/PopGen.jl/edit/master/docs/vcf.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/pdimens/PopGen.jl/edit/master/docs/hardyweinberg.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>VCF</h1>
+                  <h1>Hardy-Weinberg Equilibrium</h1>
                 
-                <h2 id="format">Format</h2>
-<p>Variant Call Format (or <em>VCF</em>) files already follow a format standard, and while there is some wiggle-room for optional values, PopGen.jl only requires the core/mandatory components of a VCF, meaning problems should hopefully not arise regardless of which variant caller you are using (although we use <code>Freebayes</code> ourselves). Please open an issue if they do, or reach out to us on the community Slack.</p>
-<div class="admonition failure">
-<p class="admonition-title">filter VCF files beforehand</p>
-<p>Keep in mind, VCF files need to be filtered <strong>before</strong> importing them into PopGen.jl. There is no and will be no VCF-filtering functionality to this package, as it is outside of the purpose of PopGen.jl. Refer to <code>vcftools</code> and <code>vcflib</code> to filter your sequence data. </p>
-</div>
-<h2 id="import-a-vcf-file-as-a-popobj">Import a VCF file as a <code>PopObj</code></h2>
-<p>PopGen.jl provides a simple command <code>vcf</code> to import a VCF file as a <code>PopObj</code>, which requires only the name of the file and nothing else.</p>
-<div class="codehilite"><pre><span></span><span class="n">potato</span> <span class="o">=</span> <span class="n">vcf</span><span class="p">(</span><span class="s">&quot;/home/data/russet_potatoes.vcf&quot;</span><span class="p">)</span>
+                <p>Testing for Hardy-Weinberg Equilibrium (often abbreviated to "HW" or "HWE") is a fairly common practice in population genetics. Testing for deviation from HWE is usually done with a Chi-Squared test, where one compares the observed genotype frequencies to the expected genotype frequencies given the observed allele frequencies at a locus. </p>
+<h2 id="test-for-hardy-weinberg-equilibrium">Test for Hardy-Weinberg equilibrium</h2>
+<div class="codehilite"><pre><span></span><span class="n">hwe_test</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">,</span> <span class="n">correction</span><span class="o">::</span><span class="p">{</span><span class="n">String</span><span class="p">}</span> <span class="o">=</span> <span class="s">&quot;none&quot;</span><span class="p">)</span>
 </pre></div>
 
-<h2 id="what-vcf-files-lack">What VCF files lack</h2>
-<p>Due to the nature of the file format, importing VCF files will provide:</p>
+<p>Calculate chi-squared test of HWE for each locus and returns observed and expected heterozygosity with chi-squared, degrees of freedom and p-values for each locus.  Use <code>correction =</code> to specify a P-value correction method for multiple testing.</p>
+<h3 id="arguments">arguments</h3>
 <ul>
-<li>sample names</li>
-<li>ploidy of each sample</li>
-<li>locus names</li>
-<li>genotypes</li>
+<li><code>x</code> : the input <code>PopObj</code></li>
+<li><code>correction =</code>  : a string specifying a P-value adjustment type</li>
 </ul>
-<p>but they will <strong>not</strong> provide:</p>
+<h3 id="correction-methods"><code>correction</code> methods:</h3>
 <ul>
-<li>population information</li>
-<li>latitude or longitude</li>
+<li><code>"bonferroni"</code> : Bonferroni adjustment</li>
+<li><code>"holm"</code> : Holm adjustment</li>
+<li><code>"hochberg"</code> : Hochberg adjustment</li>
+<li><code>"bh"</code> or <code>"b-h"</code> : Benjamini-Hochberg adjustment</li>
+<li><code>"by"</code> or <code>"b-y"</code>: Benjamini-Yekutieli adjustment</li>
+<li><code>"bl"</code> or <code>"b-l"</code> : Benjamini-Liu adjustment</li>
+<li><code>"hommel"</code> : Hommel adjustment</li>
+<li><code>"sidak"</code> : Šidák adjustment</li>
+<li><code>"forward stop"</code> or <code>"fs"</code> : Forward-Stop adjustment</li>
+<li><code>"bc"</code> or <code>"b-c"</code> : Barber-Candès adjustment</li>
 </ul>
-<p>This means you will need to add that information separately afterwards. Location data (which is optional!) can be added to the <code>PopObj</code> directly with <code>.samples.latitude</code> or <code>.samples.longitude</code> or with the <code>locations!</code> command. Population names (mandatory!) can be added by overwriting <code>.samples.population</code> with an array of population names. </p>
+<h3 id="example">example</h3>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">example</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">hwe_test</span><span class="p">(</span><span class="n">gulfsharks</span><span class="p">(),</span> <span class="n">correction</span> <span class="o">=</span> <span class="s">&quot;bh&quot;</span><span class="p">)</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">output</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>2213×7 DataFrames.DataFrame
+│ Row  │ locus        │ het_obs   │ het_exp   │ χ²        │ DF       │ P          │ Pcorr      │
+│      │ String       │ Float64   │ Float64   │ Float64⍰  │ Float64⍰ │ Float64⍰   │ Float64⍰   │
+├──────┼──────────────┼───────────┼───────────┼───────────┼──────────┼────────────┼────────────┤
+│ 1    │ contig_35208 │ 0.419811  │ 0.398051  │ 0.690981  │ 3.0      │ 0.875323   │ 0.948912   │
+│ 2    │ contig_23109 │ 0.262136  │ 0.288434  │ 1.71251   │ 1.0      │ 0.19066    │ 0.295543   │
+│ 3    │ contig_4493  │ 0.205742  │ 0.228532  │ 2.0785    │ 1.0      │ 0.149387   │ 0.234857   │
+│ 4    │ contig_10742 │ 0.0666667 │ 0.0644444 │ 0.249703  │ 1.0      │ 0.617284   │ 0.807471   │
+│ 5    │ contig_14898 │ 0.240566  │ 0.21875   │ 2.10859   │ 1.0      │ 0.146475   │ 0.230442   │
+│ 6    │ contig_8483  │ 0.0188679 │ 0.0186899 │ 0.019229  │ 1.0      │ 0.889712   │ 0.948912   │
+│ 7    │ contig_8065  │ 0.0801887 │ 0.0769736 │ 0.369866  │ 1.0      │ 0.543077   │ 0.732045   │
+│ 8    │ contig_14708 │ 0.0616114 │ 0.0597134 │ 0.213168  │ 1.0      │ 0.644295   │ 0.828219   │
+│ 9    │ contig_2307  │ 0.0289855 │ 0.0285654 │ 0.0447664 │ 1.0      │ 0.832434   │ 0.938862   │
+│ 10   │ contig_14564 │ 0.2       │ 0.209751  │ 0.453809  │ 1.0      │ 0.500532   │ 0.6894     │
+│ 11   │ contig_15269 │ 0.15566   │ 0.146505  │ 1.51012   │ 3.0      │ 0.679938   │ 0.857489   │
+│ 12   │ contig_24796 │ 0.161137  │ 0.201613  │ 8.50406   │ 1.0      │ 0.00354355 │ 0.00596524 │
+│ 13   │ contig_14251 │ 0.490566  │ 0.49782   │ 0.0450074 │ 1.0      │ 0.83199    │ 0.938862   │
+│ 14   │ contig_44797 │ 0.0240385 │ 0.0237495 │ 0.0307836 │ 1.0      │ 0.860724   │ 0.944468   │
+│ 15   │ contig_43681 │ 0.42381   │ 0.472778  │ 2.25286   │ 1.0      │ 0.133368   │ 0.211628   │
+│ 16   │ contig_24115 │ 0.0333333 │ 0.0327778 │ 0.0603275 │ 1.0      │ 0.805979   │ 0.931567   │
+│ 17   │ contig_5456  │ 0.0471698 │ 0.0460573 │ 0.12369   │ 1.0      │ 0.725066   │ 0.892017   │
+│ 18   │ contig_21698 │ 0.0758294 │ 0.0729543 │ 0.327695  │ 1.0      │ 0.567019   │ 0.758715   │
+⋮
+│ 2195 │ contig_8479  │ 0.0235849 │ 0.0598856 │ 212.031   │ 3.0      │ 0.0        │ 0.0        │
+│ 2196 │ contig_47462 │ 0.45283   │ 0.502803  │ 213.589   │ 3.0      │ 0.0        │ 0.0        │
+│ 2197 │ contig_4095  │ 0.259434  │ 0.275398  │ 212.0     │ 3.0      │ 0.0        │ 0.0        │
+│ 2198 │ contig_7239  │ 0.0660377 │ 0.0729352 │ 212.25    │ 3.0      │ 0.0        │ 0.0        │
+│ 2199 │ contig_40507 │ 0.0330189 │ 0.0688746 │ 212.062   │ 3.0      │ 0.0        │ 0.0        │
+│ 2200 │ contig_42145 │ 0.358491  │ 0.31754   │ 5.95351   │ 3.0      │ 0.113894   │ 0.182428   │
+│ 2201 │ contig_1033  │ 0.363208  │ 0.352872  │ 0.181856  │ 1.0      │ 0.669783   │ 0.85219    │
+│ 2202 │ contig_2798  │ 0.122642  │ 0.140219  │ 212.952   │ 3.0      │ 0.0        │ 0.0        │
+│ 2203 │ contig_12991 │ 0.0518868 │ 0.112685  │ 212.161   │ 3.0      │ 0.0        │ 0.0        │
+│ 2204 │ contig_22981 │ 0.188679  │ 0.200783  │ 0.770434  │ 1.0      │ 0.380083   │ 0.551307   │
+│ 2205 │ contig_15342 │ 0.268868  │ 0.29084   │ 212.328   │ 3.0      │ 0.0        │ 0.0        │
+│ 2206 │ contig_24711 │ 0.273585  │ 0.288136  │ 0.540694  │ 1.0      │ 0.462145   │ 0.645777   │
+│ 2207 │ contig_18959 │ 0.466981  │ 0.437422  │ 0.968086  │ 1.0      │ 0.325158   │ 0.482394   │
+│ 2208 │ contig_43517 │ 0.103774  │ 0.150454  │ 212.675   │ 3.0      │ 0.0        │ 0.0        │
+│ 2209 │ contig_27356 │ 0.0660377 │ 0.0906016 │ 213.73    │ 3.0      │ 0.0        │ 0.0        │
+│ 2210 │ contig_475   │ 0.367925  │ 0.375     │ 0.0754717 │ 1.0      │ 0.78353    │ 0.926932   │
+│ 2211 │ contig_19384 │ 0.0613208 │ 0.11264   │ 214.152   │ 3.0      │ 0.0        │ 0.0        │
+│ 2212 │ contig_22368 │ 0.0896226 │ 0.11224   │ 212.481   │ 3.0      │ 0.0        │ 0.0        │
+│ 2213 │ contig_2784  │ 0.0283019 │ 0.0908241 │ 212.047   │ 3.0      │ 0.0        │ 0.0        │
+</pre></div></div>
+</div>
+<p><img alt="🤔" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f914.svg" title=":thinking:" /> For more information on multiple testing adjustments, see <a href="https://juliangehring.github.io/MultipleTesting.jl/stable/">MultipleTesting.jl</a></p>
                 
                   
                 
@@ -651,7 +729,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../genepop/" title="Genepop" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../examples/" title="Example data" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -660,19 +738,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Genepop
+                Example data
               </span>
             </div>
           </a>
         
         
-          <a href="../commands/" title="View/edit PopObj" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../community/" title="Community" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                View/edit PopObj
+                Community
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
