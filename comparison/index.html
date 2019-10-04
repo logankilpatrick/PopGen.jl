@@ -656,7 +656,7 @@
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">BenchmarkTools</span><span class="p">,</span> <span class="n">PopGen</span>
 </pre></div></div>
 </div>
-<p>As a note, the reported benchmarks are being performed on a 64-bit Manjaro Linux system on a nothing-special Huawei Matebook D with 8gigs of RAM and a 4-core AMD Ryzen5 mobile processor. <strong>Note:</strong> none of the Julia benchmarks, unless explicitly stated, are using parallel or GPU processing. </p>
+<p>As a note, the reported benchmarks are being performed on a 64-bit Manjaro Linux system on a nothing-special Huawei Matebook D with 8gigs of RAM and a 4-core AMD Ryzen5 mobile processor. <strong>Note:</strong> all of the Julia benchmarks, unless explicitly stated, are performed single-threaded (i.e. not parallel, distributed, or GPU). </p>
 <h3 id="loading-in-data">Loading in data</h3>
 <p>Since <code>gulfsharks</code> is shamelessly provided in PopGen.jl, we simply invoke the <code>gulfsharks()</code> command in Julia. If you would like to try this yourself in R, find the <code>gulfsharks.gen</code> file in the package repository under <code>/data/data/gulfsharks.gen</code>. It will print out the input filename several times, which is omitted below for clarity.</p>
 <div class="superfences-tabs">
@@ -666,7 +666,7 @@
   <span class="mf">2.098</span> <span class="n">s</span> <span class="p">(</span><span class="mi">14175767</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">707.58</span> <span class="n">MiB</span><span class="p">)</span>
 </pre></div></div>
 </div>
-<p>This R benchmark with take a few minutes. Consider going to the kitchen to make some tea while you wait.</p>
+<p>This R benchmark will take a few minutes. Consider  making some tea while you wait.</p>
 <div class="superfences-tabs">
 <input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
 <label for="__tab_3_0">R</label>
@@ -681,7 +681,7 @@
 <p>Comparing averages, PopGen.jl clocks in at <code>2.098s</code> versus adegenet's <code>6.745s</code> , so ~3x faster.</p>
 <p>Julia  <img alt="🚀" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f680.svg" title=":rocket:" />   |    R  <img alt="🐌" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f40c.svg" title=":snail:" /></p>
 <h3 id="popobj-vs-genind-size"><code>PopObj</code> vs <code>genind</code> size</h3>
-<p>It was pretty tricky to come up with a sensible/efficient/convenient data structure for PopGen.jl, and the original attempt was a Julian variant to a <code>genind</code>, which itself is something known as an <code>S4 class object</code>. While two dataframes design might not seem like it took a lot of effort, we ultimately decided that the column-major style and available tools, combined with careful genotype Typing was a decent "middle-ground" of ease-of-use vs performance. Plus, we are suckers for consistent syntax, which <code>genind</code>'s don't have compared to standard R syntax (looking at you too, Tidyverse/ggplot!). <em>Anyway</em>, it's important to understand how much space your data will take up in memory (your RAM) when you load it in, especially since data's only getting bigger! Keep in mind that <code>gulfsharks()</code> in PopGen.jl also provides lat/long data, which <em>should</em> inflate the size of the object somewhat compared to the <code>genind</code>, which we won't add any location data to.</p>
+<p>It was pretty tricky to come up with a sensible/efficient/convenient data structure for PopGen.jl, and the original attempt was a Julian variant to a <code>genind</code>, which itself is something known as an <code>S4 class object</code>. While the two-dataframes design might not seem like it took a lot of effort, we ultimately decided that the column-major style and available tools, combined with careful genotype Typing was a decent "middle-ground" of ease-of-use vs performance. Plus, we are suckers for consistent syntax, which <code>genind</code>'s don't have compared to standard R syntax (looking at you too, Tidyverse/ggplot!). <em>Anyway</em>, it's important to understand how much space your data will take up in memory (your RAM) when you load it in, especially since data's only getting bigger! Keep in mind that <code>gulfsharks()</code> in PopGen.jl also provides lat/long data, which <em>should</em> inflate the size of the object somewhat compared to the <code>genind</code>, which we won't add any location data to.</p>
 <div class="superfences-tabs">
 <input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
 <label for="__tab_4_0">Julia</label>
@@ -699,7 +699,7 @@
 </div>
 <p><img alt="clutches pearls" src="../img/clutches pearls cactus.png" /></p>
 <p>How is that possible?! Well, it's all in the Typing of the genotypes. Each genotype for each locus is encoded as a <code>Tuple</code> of either <code>Int8</code> (if SNPs) or <code>Int16</code> (if msats) to absolutely minimize their footprint without further going into byte-level encoding (so you can still see human-readable alleles).</p>
-<p>The data takes up ~<code>4.9mb</code> in memory as a <code>PopObj</code> versus the ~<code>5.3mb</code> of a <code>genind</code>, about 18% smaller.</p>
+<p>The data takes up ~<code>4.9mb</code> in memory as a <code>PopObj</code> versus the ~<code>5.3mb</code> of a <code>genind</code>, about 7% smaller. It's not a ton of difference, but remember that the <code>PopObj</code> also contains more data.</p>
 <p>Julia  <img alt="🏡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f3e1.svg" title=":house_with_garden:" /> ​   |    R  <img alt="🏰" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f3f0.svg" title=":european_castle:" /></p>
 <h3 id="chi-squared-test-for-hwe">Chi-squared test for HWE</h3>
 <p>This is a classic popgen test and a relatively simple one. </p>

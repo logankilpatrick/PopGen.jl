@@ -846,7 +846,7 @@
                 
                   <h1>Under the hood functions</h1>
                 
-                <p>Like most Julia packages, there are a lot of functions in PopGen.jl, but only a number of them are <code>exported</code>, which are the ones you the user can casually use after calling <code>using PopGen</code>. You'll often see other Julia packages refer to these as API's, or "Application Programming Interface". If you want to contribute to PopGen.jl, then it will be super useful to know what API's are already available and save you the trouble of reinventing the wheel.</p>
+                <p>Like most Julia packages, there are a lot of functions in PopGen.jl, but only a number of them are <code>exported</code>, which are the ones you the user can casually use after calling <code>using PopGen</code>. You'll often see other Julia packages refer to these as API's, or "Application Programming Interface". If you want to contribute to PopGen.jl, then it will be super useful to know what API's are already available and save you the trouble of reinventing the wheel. If you would like to use any of these functions by themselves (outside the scope of development), then you will need to use the <code>Package.function()</code> syntax, which looks like <code>PopGen.het_sample</code> in practice. </p>
 <h2 id="allele-frequencies">Allele Frequencies</h2>
 <p>These are found in <code>AlleleFreq.jl</code></p>
 <h3 id="allele_freq_mini">allele_freq_mini</h3>
