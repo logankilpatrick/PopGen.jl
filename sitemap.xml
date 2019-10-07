@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/juliaprimer/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/comparison/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/install/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/popobj_type/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/PopObj_accessing/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/popobj_location/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/delimited/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/genepop/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/vcf/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/commands/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/examples/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/hardyweinberg/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/community/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/hidden_api/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://pdimens.github.io/PopGen.jl/stable/faq/</loc>
      <lastmod>2019-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
