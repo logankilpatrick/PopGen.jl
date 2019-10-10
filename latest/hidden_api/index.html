@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#allele-frequencies" tabindex="1" class="md-skip">
+      <a href="#genotype-value" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -510,6 +510,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#genotype-value" title="Genotype Value" class="md-nav__link">
+    Genotype Value
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#allele-frequencies" title="Allele Frequencies" class="md-nav__link">
     Allele Frequencies
   </a>
@@ -518,8 +525,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#allele_freq_mini" title="allele_freq_mini" class="md-nav__link">
-    allele_freq_mini
+  <a href="#allele_freq" title="allele_freq" class="md-nav__link">
+    allele_freq
   </a>
   
 </li>
@@ -697,6 +704,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#genotype-value" title="Genotype Value" class="md-nav__link">
+    Genotype Value
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#allele-frequencies" title="Allele Frequencies" class="md-nav__link">
     Allele Frequencies
   </a>
@@ -705,8 +719,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#allele_freq_mini" title="allele_freq_mini" class="md-nav__link">
-    allele_freq_mini
+  <a href="#allele_freq" title="allele_freq" class="md-nav__link">
+    allele_freq
   </a>
   
 </li>
@@ -859,14 +873,24 @@
                   <h1>Under the hood functions</h1>
                 
                 <p>Like most Julia packages, there are a lot of functions in PopGen.jl, but only a number of them are <code>exported</code>, which are the ones you the user can casually use after calling <code>using PopGen</code>. You'll often see other Julia packages refer to these as API's, or "Application Programming Interface". If you want to contribute to PopGen.jl, then it will be super useful to know what API's are already available and save you the trouble of reinventing the wheel. If you would like to use any of these functions by themselves (outside the scope of development), then you will need to use the <code>Package.function()</code> syntax, which looks like <code>PopGen.het_sample</code> in practice. </p>
+<h2 id="genotype-value">Genotype Value</h2>
+<p>Found in <code>Manipulate.jl</code></p>
+<div class="codehilite"><pre><span></span><span class="n">get_genotype</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">PopObj</span><span class="p">;</span> <span class="n">sample</span><span class="o">::</span><span class="n">String</span><span class="p">,</span> <span class="n">locus</span><span class="o">::</span><span class="n">String</span><span class="p">)</span>
+</pre></div>
+
+<p>Return the genotype of a specific sample for specific locus in a <code>PopObj</code>. This is a barebones variant to <code>isolate_genotypes</code> that is ~ 1,000 - 10,000x faster depending on the size of the data.</p>
+<p>Example</p>
+<div class="codehilite"><pre><span></span><span class="n">get_genotype</span><span class="p">(</span><span class="n">nancycats</span><span class="p">,</span> <span class="n">sample</span> <span class="o">=</span> <span class="s">&quot;N115&quot;</span> <span class="p">,</span> <span class="n">locus</span> <span class="o">=</span> <span class="s">&quot;fca8&quot;</span><span class="p">)</span><span class="sb">`</span>
+</pre></div>
+
 <h2 id="allele-frequencies">Allele Frequencies</h2>
 <p>These are found in <code>AlleleFreq.jl</code></p>
-<h3 id="allele_freq_mini">allele_freq_mini</h3>
-<div class="codehilite"><pre><span></span><span class="n">allele_freq_mini</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Union</span><span class="p">{</span><span class="n">Missing</span><span class="p">,</span> <span class="kt">Tuple</span><span class="p">},</span><span class="mi">1</span><span class="p">})</span>
+<h3 id="allele_freq">allele_freq</h3>
+<div class="codehilite"><pre><span></span><span class="n">allele_freq</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Union</span><span class="p">{</span><span class="n">Missing</span><span class="p">,</span> <span class="kt">Tuple</span><span class="p">},</span><span class="mi">1</span><span class="p">})</span>
 </pre></div>
 
 <p>Calculate allele counts for a single locus of a <code>PopObj</code>. Returns a <code>Dict</code> of allele's and their frequencies.</p>
-<div class="codehilite"><pre><span></span><span class="n">allele_freq_mini</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Union</span><span class="p">{</span><span class="n">Missing</span><span class="p">,</span> <span class="kt">Tuple</span><span class="p">},</span><span class="mi">1</span><span class="p">})</span>
+<div class="codehilite"><pre><span></span><span class="n">allele_freq</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">SubArray</span><span class="p">{</span><span class="kt">Union</span><span class="p">{</span><span class="n">Missing</span><span class="p">,</span> <span class="kt">Tuple</span><span class="p">},</span><span class="mi">1</span><span class="p">})</span>
 </pre></div>
 
 <p>Calculate allele counts for a single locus of a <code>PopObj</code> split by population using <code>group()</code>. Returns a <code>Dict</code> of allele's and their frequencies.</p>
